@@ -8,7 +8,6 @@ in
     ../../home/firefox.nix
     ../../home/zed.nix
     ../../home/shell
-    ../../home/fcitx
   ];
   # 注意修改这里的用户名与用户目录
   home.username = "luoluo";
