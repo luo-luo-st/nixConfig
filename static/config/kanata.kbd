@@ -1,0 +1,78 @@
+;; https://github.com/jtroo/kanata/blob/main/docs/config.adoc
+#|
+C-：左控制（也有或没有侧面指示器）‹⎈‹⌃‹
+
+RC-：右控制（也⎈› ⌃›)
+
+A-：左 Alt 键（也有或没有侧面指示器））‹⎇‹⌥‹
+
+RA-： 右 Alt，又名AltGr （还有AG ⎇› ⌥›)
+
+S-：左 Shift（也有或没有侧面指示器））‹⇧‹
+
+RS-：右移（也⇧›)
+
+M-： 左 Meta，又名Windows、GUI、Command、Super（也有或没有侧面指示器））‹⌘‹❖‹◆‹
+
+RM-： 右 Meta （也⌘› ❖› ◆›)
+|#
+(defcfg ;; 配置项
+  process-unmapped-keys no ;;启用此配置会使 kanata 进程键不在 defsrc 中
+  danger-enable-cmd no ;; 该操作允许 kanata 执行带有传递给它们的参数的程序
+  sequence-timeout 1000 ;;此选项自定义键序列超时（单位：ms）。其默认值 是 1000。
+)
+(defalias 
+  configlayer (layer-while-held configlayer)
+  userlayer (layer-while-held userlayer)
+  capslayer (layer-while-held capslayer)
+  unicodelayer (layer-while-held unicodelayer)
+  0 0
+  1 1
+  2 2
+  3 3
+  4 4
+  5 5
+  6 6
+  7 7
+  8 8
+  9 9
+) 
+(defalias ;; 别名 
+  cap (tap-hold-press 200 200 caps @capslayer)
+  f10 (tap-hold-press 200 200 F10 @configlayer)
+  f8 (tap-hold-press 200 200 F8 @unicodelayer)
+  f3 (tap-hold-press 200 200 F3 @userlayer)
+  npm_run (macro n p m spc r u n spc d e v)
+  192.168.1.1 (macro @1 @9 @2 . @1 @6 @8 . @1 . @1)
+)
+(defsrc ;; 需要检查的按键
+  Escape F1   F2   F3   F4   F5   F6   F7   F8   F9   F10  F11  F12  Delete Insert
+  grv  1    2    3    4    5    6    7    8    9    0    -    =    bspc
+  tab  q    w    e    r    t    y    u    i    o    p    [    ]    \
+  caps a    s    d    f    g    h    j    k    l    ;    '    ret
+  lsft z    x    c    v    b    n    m    ,    .    /    rsft
+  lctl lmet lalt           spc            ralt rmet rctl
+)
+;; deflayer 定义按键层 跟上名字,lrld:重载kanata配置文件按键,rpt:重复上一个按下的键按键,
+(deflayermap (base) ;; 
+  F3 @f3
+  F8 @f8
+  F10 @f10
+  caps @cap
+)
+(deflayermap (configlayer) ;; 另一种定义层的方式
+  1 lrld ;; 重新加载配置文件
+  2 rpt ;; 重复上一个按下的键
+  3 rpt-any ;; 重复上一个按下的键，包括按键层
+ )
+(deflayermap (userlayer)
+  1 (macro h t t p S-; / / 100 l o c a l h o s t S-; @8 @0 @8 @0) ;; http://localhost:8080
+  2 @npm_run ;; npm run dev
+  3 @192.168.1.1 ;; 
+)
+(deflayermap (capslayer) ;;通道
+)
+(deflayermap (unicodelayer)
+
+
+)
