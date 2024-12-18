@@ -1,6 +1,9 @@
 {pkgs, ...} : {
   services.xserver.displayManager.gdm.enable = true;
   services.xserver.displayManager.gdm.wayland = true;
+  services.xserver = {
+  enable = false;
+};
 environment.gnome.excludePackages = (with pkgs; [
   gnome-photos
 ]) ++ (with pkgs; [

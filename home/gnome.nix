@@ -7,9 +7,7 @@ in
   imports = [
     
   ];
-  services.xserver = {
-  enable = false;
-};
+  
   home.file.".face".source = avatar; 
   dconf = {
     enable = true;
