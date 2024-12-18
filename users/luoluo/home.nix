@@ -33,6 +33,8 @@ in
   # '';
   # 这些软件将仅在当前用户下可用，不会影响系统级别的配置
   home.packages = with pkgs;[
+    dconf
+    glib-networking 
     neofetch
   ];
   
