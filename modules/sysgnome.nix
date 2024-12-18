@@ -1,6 +1,9 @@
 {pkgs, ...} : {
   services.xserver.displayManager.gdm.enable = true;
   services.xserver.displayManager.gdm.wayland = true;
+  services.xserver.displayManager.gdm.settings = {
+    
+  };
 environment.gnome.excludePackages = (with pkgs; [
   gnome-photos
 ]) ++ (with pkgs; [
@@ -17,5 +20,6 @@ environment.gnome.excludePackages = (with pkgs; [
   hitori # sudoku game
   atomix # puzzle game
 ]);
+
 
 }
