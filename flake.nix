@@ -22,12 +22,12 @@
     hyprland.url = "github:hyprwm/Hyprland";
   };
 
-  outputs = inputs@{ nixpkgs, home-manager, nur, ... }: {
+  outputs = inputs@{ nixpkgs, home-manager, nur, hyprland, ... }: {
     nixosConfigurations = {
       nixos = let
         username = "luoluo";
         system = "x86_64-linux";
-        specialArgs = {inherit username system inputs;};
+        specialArgs = {inherit username system;};
       in
         nixpkgs.lib.nixosSystem {
           inherit specialArgs;
