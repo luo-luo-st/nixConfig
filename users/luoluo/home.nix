@@ -4,7 +4,7 @@ let
 in
 {
   imports = [
-    ../../home/gnome.nix
+    # ../../home/gnome.nix
     ../../home/firefox.nix
     ../../home/zed.nix
     ../../home/direnv.nix

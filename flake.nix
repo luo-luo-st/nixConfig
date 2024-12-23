@@ -19,6 +19,7 @@
     };
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
+    hyprland.url = "github:hyprwm/Hyprland";
   };
 
   outputs = inputs@{ nixpkgs, home-manager, nur, ... }: {
@@ -26,7 +27,7 @@
       nixos = let
         username = "luoluo";
         system = "x86_64-linux";
-        specialArgs = {inherit username system;};
+        specialArgs = {inherit username system inputs;};
       in
         nixpkgs.lib.nixosSystem {
           inherit specialArgs;
