@@ -5,7 +5,7 @@
   imports =
     [
       ../../modules/system.nix
-      # ../../modules/hyprland.nix
+      ../../modules/hyprland.nix
       ../../modules/sql/postgreSQL.nix
       ../../pkgs/variables.nix
       ../../pkgs/kanata.nix
