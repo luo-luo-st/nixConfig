@@ -5,6 +5,7 @@ in
 {
   imports = [
     # ../../home/gnome.nix
+    ../../home/hyprland.nix
     ../../home/firefox.nix
     ../../home/zed.nix
     ../../home/direnv.nix
