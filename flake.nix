@@ -11,7 +11,7 @@
     ];
   };
   inputs = {
-    nixpkgs.url = "https://mirrors.tuna.tsinghua.edu.cn/nix-channels/nixpkgs-unstable/nixexprs.tar.xz";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     flake-utils.url = "github:numtide/flake-utils";
     nur = {
       url = "github:nix-community/NUR";
@@ -27,11 +27,10 @@
       nixos = let
         username = "luoluo";
         system = "x86_64-linux";
-        specialArgs = {inherit username system;};
+        specialArgs = {inherit username system inputs;};
       in
         nixpkgs.lib.nixosSystem {
           inherit specialArgs;
-          system = system;
           modules = [
             nur.modules.nixos.default
             nur.legacyPackages."${system}".repos.iopq.modules.xraya
