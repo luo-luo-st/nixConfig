@@ -27,7 +27,7 @@
       nixos = let
         username = "luoluo";
         system = "x86_64-linux";
-        specialArgs = {inherit username system;};
+        specialArgs = {inherit username system inputs;};
       in
         nixpkgs.lib.nixosSystem {
           inherit specialArgs;
