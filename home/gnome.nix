@@ -18,13 +18,8 @@ in
           "appindicatorsupport@rgcjonas.gmail.com" 
           "window-list@gnome-shell-extensions.gcampax.github.com"
           "windowsNavigator@gnome-shell-extensions.gcampax.github.com"
+          
         ];
-        favorite-apps = [
-          "firefox.desktop"
-          "zed.desktop"
-          "nushell.desktop"
-        ];
-
       };
       "org/gnome/desktop/background" = {
         
@@ -32,7 +27,6 @@ in
         picture-uri-dark = wallpaper;
       };
       "org/gnome/mutter" = {
-        
         center-new-windows = true;
       };
 
