@@ -5,6 +5,7 @@
     vim
     open-vm-tools
   ];
+  virtualisation.vmware.guest.enable = true;
   # i18n.defaultLocale = "zh_CN.UTF-8";
   # time.timeZone = "Asia/Shanghai";
   # git 相关配置
