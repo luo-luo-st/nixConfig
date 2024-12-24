@@ -9,5 +9,5 @@
   # 设置实验性功能
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
   # 系统状态版本
-  system.stateVersion = "25.05"; 
+  system.stateVersion = "24.11"; 
 }
