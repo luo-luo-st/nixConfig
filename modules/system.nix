@@ -4,8 +4,8 @@
   environment.systemPackages = with pkgs; [
     vim
   ];
-  i18n.defaultLocale = "zh_CN.UTF-8";
-  time.timeZone = "Asia/Shanghai";
+  # i18n.defaultLocale = "zh_CN.UTF-8";
+  # time.timeZone = "Asia/Shanghai";
   # git 相关配置
   programs.git = {
     enable = true;
