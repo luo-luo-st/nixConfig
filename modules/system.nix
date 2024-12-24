@@ -3,6 +3,7 @@
   # 系统包安装
   environment.systemPackages = with pkgs; [
     vim
+    open-vm-tools
   ];
   # i18n.defaultLocale = "zh_CN.UTF-8";
   # time.timeZone = "Asia/Shanghai";
