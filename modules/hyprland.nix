@@ -6,5 +6,9 @@
     # make sure to also set the portal package, so that they are in sync
     portalPackage = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland;
   };
-  services.displayManager.sddm.wayland.enable = true;
+  services.displayManager.sddm= {
+    enable = true;
+    wayland.enable = true;
+    }
+
 }
