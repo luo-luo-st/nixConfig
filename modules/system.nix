@@ -23,7 +23,7 @@
   # 用户配置
   users.users.${username} = {
     isNormalUser = true;
-    extraGroups = [ "wheel" "networkmanager" "uinput"];
+    extraGroups = [ "wheel" "networkmanager" "uinput" "video"];
     initialPassword = "luoluo";
   };
 
