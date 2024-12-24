@@ -13,6 +13,7 @@
     ];
   networking.hostName = "nixos";
   networking.networkmanager.enable = true;
+  virtualisation.vmware.guest.enable = true;
 }
 
 
